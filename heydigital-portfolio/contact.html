@@ -22,6 +22,7 @@
     <!-- page name -->
     <!-- favicon -->
     <link rel="icon" href="logo1.svg" type="image/svg+xml" style="background: transparent;">
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <title>Contact Us - HeyDigitals</title>
     <meta name="description" content="Get in touch with HeyDigitals. Contact our digital agency in Tamil Nadu, India for web development, digital marketing, and automation services.">
     <meta name="keywords" content="contact HeyDigitals, digital agency contact, web development inquiry, digital marketing services, Tamil Nadu">
@@ -65,7 +66,7 @@
                 <div class="mil-pos-abs mil-animation-2">
                     <div class="mil-reveal-frame">
                         <p class="mil-reveal-box"></p>
-                        <p class="mil-h3 mil-muted mil-thin">heydigitals</p>
+                        <p class="mil-h3 mil-muted mil-thin">Heydigital</p>
                     </div>
                 </div>
             </div>
@@ -96,45 +97,40 @@
                             <nav class="mil-main-menu" id="swupMenu">
                                 <ul>
                                     <li class="mil-has-children mil-active">
-                                        <a href="home-1.html">Homepage</a>
+                                        <a href="home-1.html">Home</a>
                                         <ul>
                                             <li><a href="home-1.html">Landing page</a></li>
                                         </ul>
                                     </li>
-                                    <li class="mil-has-children">
-                                        <a href="#.">Portfolio</a>
-                                        <ul>
+                                    
                                             <li class="mil-has-children"><a href="portfolio-3.html">Our Works</a></li>
-                                        </ul>
-                                    </li>
+                                    
                                     <li class="mil-has-children">
                                         <a href="#.">Projects</a>
                                         <ul>
-                                            <li><a href="project-1.html">Interior design studio</a></li>
+                                            <li><a href="project-1.html">jsbuilders</a></li>
                                             <li><a href="project-2.html">Awenests</a></li>
                                             <li><a href="project-3.html">Dino Zone</a></li>
                                             <li><a href="project-4.html">TrasherTee</a></li>
                                             <li><a href="project-5.html">Bejoy</a></li>
-                                            <li><a href="project-6.html">HeyDigitals Portfolio</a></li>
-<!-- Removed project-6 link -->
+                                             <li><a href="project-6.html">Sivamani Store</a></li>
                                         </ul>
                                     </li>
                                     <li class="mil-has-children">
                                         <a href="#.">Services</a>
+
                                         <ul>
                                             <li class="mil-has-children"><a href="services.html">Services List</a></li>
                                         </ul>
                                     </li>
-                                    <li class="mil-has-children">
-                                        <a href="#.">Other pages</a>
-                                        <ul>
-                                            <li class="mil-has-children"><a href="team.html">Team</a></li>
+
+                                   
+                                           
                                             <li class="mil-has-children"><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </li>
+                                        
+                                  
                                 </ul>
                             </nav>
-
                         </div>
                         <div class="col-xl-7">
 
@@ -170,7 +166,7 @@
 
                                             <h6 class="mil-muted mil-mb-30">Email</h6>
 
-                                            <p class="mil-light-soft mil-up">heydigitals.care@gmail.com<br><span class="mil-no-wrap">For inquiries</span></p>
+                                            <p class="mil-light-soft mil-up">Support@heydigital.work<br><span class="mil-no-wrap">For inquiries</span></p>
 
                                         </div>
                                         <div class="col-lg-4 mil-mb-60">
@@ -223,7 +219,7 @@
                     <div class="mil-banner-content mil-center mil-up">
                         <div class="container">
                             <ul class="mil-breadcrumbs mil-center mil-mb-60">
-                                <li class="mil-has-children"><a href="home-1.html">Homepage</a></li>
+                                <li class="mil-has-children"><a href="home-1.html">Home</a></li>
                                 <li class="mil-has-children"><a href="contact.html">Contact</a></li>
                             </ul>
                             <h1 class="mil-mb-60">Get in touch!</h1>
@@ -243,26 +239,35 @@
                 </div>
                 <!-- map end -->
 
-                 <!-- contact form -->
+                 !-- contact form -->
 <section id="contact">
     <div class="container mil-p-120-90">
         <h3 class="mil-center mil-up mil-mb-120">Let's <span class="mil-thin">Talk</span></h3>
+        
+        <!-- Success/Error Messages -->
+        <div class="success-message" id="successMessage">
+            ✓ Thank you! Your message has been sent successfully.
+        </div>
+        <div class="error-message" id="errorMessage">
+            ✗ Something went wrong. Please try again.
+        </div>
+        
         <form class="row align-items-center" id="contactForm">
             <div class="col-lg-6 mil-up">
-                <input type="text" id="userName" placeholder="What's your name" required>
+                <input type="text" name="from_name" id="userName" placeholder="What's your name" required>
             </div>
             <div class="col-lg-6 mil-up">
-                <input type="email" id="userEmail" placeholder="Your Email" required>
+                <input type="email" name="from_email" id="userEmail" placeholder="Your Email" required>
             </div>
             <div class="col-lg-12 mil-up">
-                <textarea id="userMessage" placeholder="Tell us about our project" required></textarea>
+                <textarea name="message" id="userMessage" placeholder="Tell us about your project" required></textarea>
             </div>
             <div class="col-lg-8">
                 <p class="mil-up mil-mb-30"><span class="mil-accent">*</span> We promise not to disclose your personal information to third parties.</p>
             </div>
             <div class="col-lg-4">
                 <div class="mil-adaptive-right mil-up mil-mb-30">
-                    <button type="submit" class="mil-button mil-arrow-place">
+                    <button type="submit" class="mil-button mil-arrow-place" id="submitBtn">
                         <span>Send message</span>
                     </button>
                 </div>
@@ -271,114 +276,163 @@
     </div>
 </section>
 <!-- contact form end -->
-<script>
+
+<script type="text/javascript">
+// Initialize EmailJS with your Public Key
+(function(){
+    emailjs.init({
+        publicKey: "FkKwaWjz11ybWDRww", // Replace with your EmailJS Public Key
+    });
+})();
+
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const name = document.getElementById('userName').value;
-    const email = document.getElementById('userEmail').value;
-    const message = document.getElementById('userMessage').value;
+    const submitBtn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('successMessage');
+    const errorMsg = document.getElementById('errorMessage');
     
-    // Email message
-    const emailTo = 'mahi09042006@gmail.com';
-    const emailSubject = encodeURIComponent('New Contact Form - ' + name);
-    const emailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    const mailtoURL = `mailto:${emailTo}?subject=${emailSubject}&body=${emailBody}`;
+    // Disable button during submission
+    submitBtn.disabled = true;
+    submitBtn.querySelector('span').textContent = 'Sending...';
     
-    // Open email client
-    window.location.href = mailtoURL;
+    // Hide previous messages
+    successMsg.classList.remove('show');
+    errorMsg.classList.remove('show');
     
-    // Reset form
-    this.reset();
+    // Send email using EmailJS
+    emailjs.sendForm('service_hw64ngm', 'template_7fw0alk', this)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            // Show success message
+            successMsg.classList.add('show');
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.querySelector('span').textContent = 'Send message';
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+            
+        }, function(error) {
+            console.log('FAILED...', error);
+            
+            // Show error message
+            errorMsg.classList.add('show');
+            
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.querySelector('span').textContent = 'Send message';
+            
+            // Hide error message after 5 seconds
+            setTimeout(() => {
+                errorMsg.classList.remove('show');
+            }, 5000);
+        });
 });
 </script>
 
+
 <!-- footer -->
-<footer class="mil-dark-bg">
-    <div class="mi-invert-fix">
-        <div class="container mil-p-120-60">
-            <div class="row justify-content-between">
-                <div class="col-md-4 col-lg-4 mil-mb-60">
+                <footer class="mil-dark-bg">
+                    <div class="mi-invert-fix">
+                        <div class="container mil-p-120-60">
+                            <div class="row justify-content-between">
+                                <div class="col-md-4 col-lg-4 mil-mb-60">
 
-                    <div class="mil-muted mil-logo mil-up mil-mb-30">HeyDigitals.</div>
+                                    <div class="mil-muted mil-logo mil-up mil-mb-30">HeyDigital.work</div>
 
-                    <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
+                                    <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
 
-                    <form class="mil-subscribe-form mil-up">
-                        <input type="text" placeholder="Enter our email">
-                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
-                    </form>
+                                    <form class="mil-subscribe-form mil-up">
+                                        <input type="text" placeholder="Enter Your email">
+                                        <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
+                                    </form>
 
-                </div>
-                <div class="col-md-7 col-lg-6">
-                    <div class="row justify-content-end">
-                        <div class="col-md-6 col-lg-7">
+                                </div>
+                                <div class="col-md-7 col-lg-6">
+                                    <div class="row justify-content-end">
+                                        <div class="col-md-6 col-lg-7">
 
-                            <nav class="mil-footer-menu mil-mb-60">
-                                <ul>
-                                    <li class="mil-up mil-active">
-                                        <a href="home-1.html">Home</a>
-                                    </li>
-                                    <li class="mil-up">
-                                        <a href="portfolio-3.html">Portfolio</a>
-                                    </li>
-                                    <li class="mil-up">
-                                        <a href="services.html">Services</a>
-                                    </li>
+                                            <nav class="mil-footer-menu mil-mb-60">
+                                                <ul>
+                                                    <li class="mil-up mil-active">
+                                                        <a href="home-1.html">Home</a>
+                                                    </li>
+                                                    <li class="mil-up">
+                                                        <a href="portfolio-3.html">Our Works</a>
+                                                    </li>
+                                                    <li class="mil-up">
+                                                        <a href="services.html">Services</a>
+                                                    </li>
                                     <li class="mil-up">
                                         <a href="contact.html">Contact</a>
                                     </li>
-                                </ul>
-                            </nav>
+                                                </ul>
+                                            </nav>
 
-                        </div>
-                        <div class="col-md-6 col-lg-5">
-
-                            <ul class="mil-menu-list mil-up mil-mb-60">
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-between flex-sm-row-reverse">
-                <div class="col-md-7 col-lg-6">
-
-                    <div class="row justify-content-between">
-
-                        <div class="col-md-6 col-lg-5 mil-mb-60">
-
-                            <h6 class="mil-muted mil-up mil-mb-30">Email</h6>
-
-                            <p class="mil-light-soft mil-up">Support@heydigital.work<br><span class="mil-no-wrap">For project inquiries, collaborations, or support.</span></p>
-
-                        </div>
-                        <div class="col-md-6 col-lg-5 mil-mb-60">
-
-                            <h6 class="mil-muted mil-up mil-mb-30">Phone / WhatsApp</h6>
-
-                            <p class="mil-light-soft mil-up"><span class="mil-no-wrap">+91 84893 10240</span><br><span class="mil-no-wrap">+91 90478 18342</span><br>Available Monday – Saturday, 9:00 AM – 7:00 PM</p>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-lg-6 mil-mb-60">
-
-                    <div class="mil-vert-between">
-                        <div class="mil-mb-30">
-                            <h6 class="mil-muted mil-up mil-mb-30">Location</h6>
-                            <p class="mil-light-soft mil-up mil-mb-30">Tamil Nadu, India<br><span class="mil-no-wrap">(Remote & Global Project Support Available)</span></p>
-
-
-                            <h6 class="mil-muted mil-up mil-mb-30">Official Links</h6>
-<ul class="mil-social-icons mil-up">
-                                                <li class="mil-has-children"><a href="https://instagram.com/heydigitals.agency" target="_blank" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
-                                                <li class="mil-has-children"><a href="https://linkedin.com/company/hey-digitals" target="_blank" class="social-icon"> <i class="fab fa-linkedin"></i></a></li>
-                                            </ul>
                                         </div>
-                                    <p class="mil-light-soft mil-up">© Copyright 2023 - HeyDigitals. All Rights Reserved.</p>
+                                        <div class="col-md-6 col-lg-5">
+
+                                            <ul class="mil-menu-list mil-up mil-mb-60">
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-between flex-sm-row-reverse">
+                                <div class="col-md-7 col-lg-6">
+
+                                    <div class="row justify-content-between">
+
+                                        <div class="col-md-6 col-lg-5 mil-mb-60">
+
+                                            <h6 class="mil-muted mil-up mil-mb-30">Email</h6>
+
+                                            <p class="mil-light-soft mil-up">Support@heydigital.work<br><span class="mil-no-wrap">For project inquiries, collaborations, or support.</span></p>
+
+                                        </div>
+                                        <div class="col-md-6 col-lg-5 mil-mb-60">
+
+                                            <h6 class="mil-muted mil-up mil-mb-30">Phone / WhatsApp</h6>
+
+                                            <p class="mil-light-soft mil-up"><span class="mil-no-wrap">+91 84893 10240</span><br><span class="mil-no-wrap">+91 90478 18342</span><br>Available Monday – Saturday, 9:00 AM – 7:00 PM</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4 col-lg-6 mil-mb-60">
+
+                                    <div class="mil-vert-between">
+    <div class="mil-mb-30">
+        <h6 class="mil-muted mil-up mil-mb-30">Location</h6>
+        <p class="mil-light-soft mil-up mil-mb-30">Tamil Nadu, India<br><span class="mil-no-wrap">(Remote & Global Project Support Available)</span></p>
+
+        <h6 class="mil-muted mil-up mil-mb-30">Official Links</h6>
+        <ul class="mil-social-icons mil-up">
+            <li>
+                <a href="#" class="social-icon external-link" data-url="https://www.instagram.com/heydigitals.agency/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="social-icon external-link" data-url="https://www.linkedin.com/company/hey-digitals/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+                                    <p class="mil-light-soft mil-up">© Copyright 2025 - HeyDigital.work All Rights Reserved.</p>
                                     </div>
 
                                 </div>
@@ -388,6 +442,45 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
                 </footer>
                 <!-- footer end -->
 
+                <!-- footer end -->
+
+<script>
+// Footer social links handler
+(function() {
+    'use strict';
+    
+    function initFooterSocialLinks() {
+        const footerLinks = document.querySelectorAll('footer .external-link');
+        
+        footerLinks.forEach(link => {
+            // Remove any existing listeners
+            const newLink = link.cloneNode(true);
+            link.parentNode.replaceChild(newLink, link);
+            
+            newLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                
+                const url = this.getAttribute('data-url');
+                if (url) {
+                    setTimeout(function() {
+                        window.open(url, '_blank', 'noopener,noreferrer');
+                    }, 0);
+                }
+                
+                return false;
+            }, true);
+        });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFooterSocialLinks);
+    } else {
+        initFooterSocialLinks();
+    }
+})();
+</script>
                 <!-- hidden elements -->
                 <div class="mil-hidden-elements">
                     <div class="mil-dodecahedron">

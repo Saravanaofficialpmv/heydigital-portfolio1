@@ -67,7 +67,7 @@
                 <div class="mil-pos-abs mil-animation-2">
                     <div class="mil-reveal-frame">
                         <p class="mil-reveal-box"></p>
-                    <p class="mil-h3 mil-muted mil-thin">heydigitals</p>
+                    <p class="mil-h3 mil-muted mil-thin">Heydigital</p>
                     </div>
                 </div>
             </div>
@@ -98,18 +98,14 @@
                             <nav class="mil-main-menu" id="swupMenu">
                                 <ul>
                                     <li class="mil-has-children mil-active">
-                                        <a href="home-1.html">Homepage</a>
+                                        <a href="home-1.html">Home</a>
                                         <ul>
                                             <li><a href="home-1.html">Landing page</a></li>
                                         </ul>
                                     </li>
-                                    <li class="mil-has-children">
-                                        <a href="#.">Portfolio</a>
-
-                                        <ul>
+                                    
                                             <li class="mil-has-children"><a href="portfolio-3.html">Our Works</a></li>
-                                        </ul>
-                                    </li>
+                                    
                                     <li class="mil-has-children">
                                         <a href="#.">Projects</a>
                                         <ul>
@@ -118,7 +114,7 @@
                                             <li><a href="project-3.html">Dino Zone</a></li>
                                             <li><a href="project-4.html">TrasherTee</a></li>
                                             <li><a href="project-5.html">Bejoy</a></li>
-                                             <li><a href="project-6.html">HeyDigitals Portfolio</a></li>
+                                             <li><a href="project-6.html">Sivamani Store</a></li>
                                         </ul>
                                     </li>
                                     <li class="mil-has-children">
@@ -129,13 +125,11 @@
                                         </ul>
                                     </li>
 
-                                    <li class="mil-has-children">
-                                        <a href="#.">Other pages</a>
-                                        <ul>
-                                            <li class="mil-has-children"><a href="team.html">Team</a></li>
+                                   
+                                           
                                             <li class="mil-has-children"><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </li>
+                                        
+                                  
                                 </ul>
                             </nav>
 
@@ -423,17 +417,17 @@
                                         <p class="mil-link mil-light-soft mil-mb-10">Founder & Creative Director</p>
                                         <ul class="mil-social-icons mil-center">
                                             <li>
-                                                <a href="https://www.instagram.com/saravana._official._/" target="_blank" rel="noopener noreferrer">
+                                                <a href="#" class="external-link" data-url="https://www.instagram.com/saravana._official._/">
                                                     <i class="fab fa-instagram"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://www.linkedin.com/in/saravana-selvaraju/" target="_blank" rel="noopener noreferrer">
+                                                <a href="#" class="external-link" data-url="https://www.linkedin.com/in/saravana-selvaraju/">
                                                     <i class="fab fa-linkedin"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://github.com/Saravanaofficialpmv" target="_blank" rel="noopener noreferrer">
+                                                <a href="#" class="external-link" data-url="https://github.com/Saravanaofficialpmv">
                                                     <i class="fab fa-github"></i>
                                                 </a>
                                             </li>
@@ -446,24 +440,24 @@
                         <!-- Mahesh -->
                         <div class="col-sm-6">
                             <div class="mil-team-card mil-up mil-mb-30" style="margin-top: 60px;">
-                                <img src="mahesh.jpeg" alt="Mahesh, Co-founder & CEO of HeyDigitals">
+                                <img src="img/mahi.jpeg" alt="Mahesh, Co-founder & CEO of HeyDigitals">
                                 <div class="mil-description">
                                     <div class="mil-secrc-text">
                                         <h5 class="mil-muted mil-mb-5">Mahesh</h5>
                                         <p class="mil-link mil-light-soft mil-mb-10">Co-founder & CEO</p>
                                         <ul class="mil-social-icons mil-center">
                                             <li>
-                                                <a href="https://www.instagram.com/heydigitals.agency?igsh=dGJldnBvaDhybWx0" target="_blank" rel="noopener noreferrer">
+                                                <a href="#" class="external-link" data-url="https://www.instagram.com/mahii_design._?igsh=MW0wN283eHUzd3cwaA==">
                                                     <i class="fab fa-instagram"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://www.linkedin.com/in/maheshthiruvasagam" target="_blank" rel="noopener noreferrer">
+                                                <a href="#" class="external-link" data-url="https://www.linkedin.com/in/maheshthiruvasagam">
                                                     <i class="fab fa-linkedin"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://github.com/Maheshthiruvasagam" target="_blank" rel="noopener noreferrer">
+                                                <a href="#" class="external-link" data-url="https://github.com/Maheshthiruvasagam">
                                                     <i class="fab fa-github"></i>
                                                 </a>
                                             </li>
@@ -479,19 +473,22 @@
     </div>
 </section>
 <!-- team end -->
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const socialLinks = document.querySelectorAll('.mil-social-icons a');
+    // Handle external links
+    const externalLinks = document.querySelectorAll('a.external-link');
     
-    socialLinks.forEach(link => {
+    externalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            // Only prevent default and manually open if it's an external link
-            if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
-                e.preventDefault();
-                window.open(href, '_blank', 'noopener,noreferrer');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const url = this.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank', 'noopener,noreferrer');
             }
+            
+            return false;
         });
     });
 });
@@ -608,7 +605,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/5.svg" alt="logo"></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/6.svg" alt="logo"></a>
+                                    <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/trasherlogo.jpeg" alt="logo"></a>
                                 </div>
                             </div>
                         </div>
@@ -626,12 +623,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="row justify-content-between">
                                 <div class="col-md-4 col-lg-4 mil-mb-60">
 
-                                    <div class="mil-muted mil-logo mil-up mil-mb-30">HeyDigitals.work</div>
+                                    <div class="mil-muted mil-logo mil-up mil-mb-30">HeyDigital.work</div>
 
                                     <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
 
                                     <form class="mil-subscribe-form mil-up">
-                                        <input type="text" placeholder="Enter our email">
+                                        <input type="text" placeholder="Enter Your email">
                                         <button type="submit" class="mil-button mil-icon-button-sm mil-arrow-place"></button>
                                     </form>
 
@@ -646,7 +643,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                                         <a href="home-1.html">Home</a>
                                                     </li>
                                                     <li class="mil-up">
-                                                        <a href="portfolio-3.html">Portfolio</a>
+                                                        <a href="portfolio-3.html">Our Works</a>
                                                     </li>
                                                     <li class="mil-up">
                                                         <a href="services.html">Services</a>
@@ -693,18 +690,26 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="col-md-4 col-lg-6 mil-mb-60">
 
                                     <div class="mil-vert-between">
-                                        <div class="mil-mb-30">
-                                            <h6 class="mil-muted mil-up mil-mb-30">Location</h6>
-                                            <p class="mil-light-soft mil-up mil-mb-30">Tamil Nadu, India<br><span class="mil-no-wrap">(Remote & Global Project Support Available)</span></p>
+    <div class="mil-mb-30">
+        <h6 class="mil-muted mil-up mil-mb-30">Location</h6>
+        <p class="mil-light-soft mil-up mil-mb-30">Tamil Nadu, India<br><span class="mil-no-wrap">(Remote & Global Project Support Available)</span></p>
 
-
-                                            <h6 class="mil-muted mil-up mil-mb-30">Official Links</h6>
-<ul class="mil-social-icons mil-up">
-                                                <li class="mil-has-children"><a href="https://www.instagram.com/heydigitals.agency?igsh=dGJldnBvaDhybWx0" target="_blank" class="social-icon"> <i class="fab fa-instagram"></i></a></li>
-                                                <li class="mil-has-children"><a href="https://linkedin.com/company/hey-digitals" target="_blank" class="social-icon"> <i class="fab fa-linkedin"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    <p class="mil-light-soft mil-up">© Copyright 2023 - HeyDigitals. All Rights Reserved.</p>
+        <h6 class="mil-muted mil-up mil-mb-30">Official Links</h6>
+        <ul class="mil-social-icons mil-up">
+            <li>
+                <a href="#" class="social-icon external-link" data-url="https://www.instagram.com/heydigitals.agency/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="social-icon external-link" data-url="https://www.linkedin.com/company/hey-digitals/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+                                    <p class="mil-light-soft mil-up">© Copyright 2025 - HeyDigital.work All Rights Reserved.</p>
                                     </div>
 
                                 </div>
@@ -713,6 +718,46 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </footer>
                 <!-- footer end -->
+
+                <!-- footer end -->
+
+<script>
+// Footer social links handler
+(function() {
+    'use strict';
+    
+    function initFooterSocialLinks() {
+        const footerLinks = document.querySelectorAll('footer .external-link');
+        
+        footerLinks.forEach(link => {
+            // Remove any existing listeners
+            const newLink = link.cloneNode(true);
+            link.parentNode.replaceChild(newLink, link);
+            
+            newLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                
+                const url = this.getAttribute('data-url');
+                if (url) {
+                    setTimeout(function() {
+                        window.open(url, '_blank', 'noopener,noreferrer');
+                    }, 0);
+                }
+                
+                return false;
+            }, true);
+        });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFooterSocialLinks);
+    } else {
+        initFooterSocialLinks();
+    }
+})();
+</script>
 
                 <!-- hidden elements -->
                 <div class="mil-hidden-elements">

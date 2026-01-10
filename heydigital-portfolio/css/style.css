@@ -4413,3 +4413,83 @@ html.is-animating .mil-menu-frame {
             cursor: not-allowed;
         }
 
+.mil-button svg,
+.mil-button .mil-arrow {
+    display: none !important;
+}
+
+/* Ensure only text and one arrow shows */
+.mil-button span {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* VIEW PROJECT button - only right arrow */
+.mil-button.mil-arrow-place {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    padding: 15px 30px;
+    background: #ff9800;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+/* Remove all pseudo-element arrows */
+.mil-button.mil-arrow-place::before,
+.mil-button.mil-arrow-place::after {
+    display: none !important;
+}
+
+/* Add ONLY ONE right arrow using background SVG */
+.mil-button.mil-arrow-place span::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M 14 5.3417969 C 13.744125 5.3417969 13.487969 5.4412187 13.292969 5.6367188 L 13.207031 5.7226562 C 12.816031 6.1136563 12.816031 6.7467188 13.207031 7.1367188 L 17.070312 11 L 4 11 C 3.448 11 3 11.448 3 12 C 3 12.552 3.448 13 4 13 L 17.070312 13 L 13.207031 16.863281 C 12.816031 17.254281 12.816031 17.887344 13.207031 18.277344 L 13.292969 18.363281 C 13.683969 18.754281 14.317031 18.754281 14.707031 18.363281 L 20.363281 12.707031 C 20.754281 12.316031 20.754281 11.682969 20.363281 11.292969 L 14.707031 5.6367188 C 14.511531 5.4412187 14.255875 5.3417969 14 5.3417969 z' fill='%23000000'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.mil-button.mil-arrow-place:hover span::after {
+    transform: translateX(5px);
+}
+
+/* Navigation arrows styling */
+.mil-slider-arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.mil-slider-arrow:hover {
+    background: #ff9800;
+    border-color: #ff9800;
+}
+
+.mil-slider-arrow svg {
+    width: 24px;
+    height: 24px;
+}
+
+.mil-slider-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}

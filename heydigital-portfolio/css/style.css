@@ -4494,3 +4494,50 @@ html.is-animating .mil-menu-frame {
     justify-content: center;
 }
 
+/* FIX FOR FOOTER SUBSCRIBE FORM - ABSOLUTE POSITIONING */
+.mil-subscribe-form {
+    position: relative !important; /* Establishes the boundary */
+    display: block !important;
+    background-color: #2a2a2a; /* Dark background */
+    border-radius: 50px;
+    width: 100%;
+    max-width: 400px; /* Limits width */
+    height: 55px; /* Fixed height to keep it neat */
+    overflow: hidden; /* Keeps round corners */
+}
+
+/* Style the text input to take full space */
+.mil-subscribe-form input {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    color: #fff;
+    padding: 0 70px 0 25px !important; /* Right padding makes room for the button */
+    outline: none;
+    font-size: 14px;
+}
+
+/* Position the Yellow Button on the far right */
+.mil-subscribe-form .mil-button {
+    position: absolute !important; /* Locks it to the corner */
+    top: 2.5px !important; /* Slight gap from top */
+    right: 2.5px !important; /* Slight gap from right */
+    background-color: #ffb700 !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    border: none;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; /* Ensures it sits on top */
+}
+
+/* Arrow Icon Style */
+.mil-subscribe-form .mil-button i {
+    color: #000000 !important;
+    font-size: 16px;
+}
+
